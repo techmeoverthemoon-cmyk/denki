@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web Dev Knowledge Hub</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <div class="app">
+      <aside class="sidebar" id="sidebar">
+        <div>
+          <div class="brand">
+            <div class="brand-icon">
+              <i class="fa-solid fa-code"></i>
+            </div>
+            <div>
+              <h2>DevHub</h2>
+              <p>Modern learning hub</p>
+            </div>
+          </div>
+
+          <nav class="sidebar-nav">
+            <button class="nav-btn active" data-filter="all">
+              <i class="fa-solid fa-layer-group"></i>
+              <span>All topics</span>
+            </button>
+            <button class="nav-btn" data-filter="Frontend Development">
+              <i class="fa-solid fa-desktop"></i>
+              <span>Frontend</span>
+            </button>
+            <button class="nav-btn" data-filter="Backend Development">
+              <i class="fa-solid fa-server"></i>
+              <span>Backend</span>
+            </button>
+            <button class="nav-btn" data-filter="UI/UX Design">
+              <i class="fa-solid fa-palette"></i>
+              <span>UI/UX</span>
+            </button>
+            <button class="nav-btn" data-filter="Cyber Security">
+              <i class="fa-solid fa-shield-halved"></i>
+              <span>Security</span>
+            </button>
+            <button class="nav-btn" data-filter="APIs">
+              <i class="fa-solid fa-plug"></i>
+              <span>APIs</span>
+            </button>
+            <button class="nav-btn" data-filter="Databases">
+              <i class="fa-solid fa-database"></i>
+              <span>Databases</span>
+            </button>
+            <button class="nav-btn" data-filter="Career Growth">
+              <i class="fa-solid fa-chart-line"></i>
+              <span>Career</span>
+            </button>
+          </nav>
+        </div>
+
+        <div class="sidebar-footer">
+          <div class="sidebar-footer-card">
+            <span>© <span id="year"></span> DevHub</span>
+            <span>Today: <span id="todayDate"></span></span>
+            <span>Created by AI</span>
+          </div>
+        </div>
+      </aside>
+
+      <main class="main">
+        <header class="topbar">
+          <button id="menuToggle" class="menu-toggle" aria-label="Toggle navigation">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <div class="topbar-title">
+            <p>Learning dashboard</p>
+            <h1>Web Development Knowledge Hub</h1>
+          </div>
+          <div class="topbar-badge">Updated weekly</div>
+        </header>
+
+        <section class="hero">
+          <div class="hero-copy">
+            <p class="eyebrow">Curated knowledge for modern builders</p>
+            <h2>Find practical web development concepts quickly.</h2>
+            <p>
+              Search by topic, explore curated categories, and build stronger
+              fundamentals with clear summaries.
+            </p>
+          </div>
+
+          <div class="search-card">
+            <div class="search-box">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <input
+                id="searchInput"
+                type="text"
+                placeholder="Search HTML, CSS, JS, APIs..."
+              />
+              <button id="clearBtn" aria-label="Clear search">✕</button>
+            </div>
+            <div id="suggestions" class="suggestions"></div>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat-card">
+              <strong>9</strong>
+              <span>Core topics</span>
+            </div>
+            <div class="stat-card">
+              <strong>8</strong>
+              <span>Categories</span>
+            </div>
+            <div class="stat-card">
+              <strong>100%</strong>
+              <span>Search-ready</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="content-section">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Explore now</p>
+              <h3>Recommended topics</h3>
+            </div>
+            <div class="filters">
+              <span class="chip active" data-filter="all">All</span>
+              <span class="chip" data-filter="Frontend Development">Frontend</span>
+              <span class="chip" data-filter="Backend Development">Backend</span>
+              <span class="chip" data-filter="Cyber Security">Security</span>
+              <span class="chip" data-filter="APIs">APIs</span>
+              <span class="chip" data-filter="Databases">Databases</span>
+              <span class="chip" data-filter="UI/UX Design">UI/UX</span>
+            </div>
+          </div>
+
+          <div id="resultsCount" class="results-count"></div>
+          <section id="results" class="results"></section>
+        </section>
+
+      </main>
+    </div>
+
+    <div id="topicModal" class="topic-modal" aria-hidden="true">
+      <div class="topic-modal-backdrop"></div>
+      <div class="topic-modal-panel" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <button id="closeModal" class="modal-close" aria-label="Close topic">×</button>
+        <div id="modalContent"></div>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
